@@ -39,8 +39,13 @@ public class Board {
 
         return true;
     }
-    private List<Integer> getValidPositionsOnRow(int row) {
 
+    /**
+     * Get all valid positions on the received row
+     * @param row integer
+     * @return List
+     */
+    private List<Integer> getValidPositionsOnRow(int row) {
         List<Integer> validPositions = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             if (tiles[row][i] == EMPTY_FIELD) {
@@ -50,6 +55,13 @@ public class Board {
 
         return validPositions;
     }
+
+    /**
+     * Get a random column from among all remaining valid positions on the received row
+     * @param validPositions List
+     * @param rand Random
+     * @return int
+     */
     private int getValidRandomColumnOnRow(List<Integer> validPositions, Random rand) {
         int randomColumn = -1;
         int validPositionsCount = validPositions.size();
@@ -60,6 +72,7 @@ public class Board {
 
         return randomColumn;
     }
+
     /**
      * Try to find a solution for the current board
      * @return boolean
@@ -79,9 +92,10 @@ public class Board {
             while (limit ++ < this.size) {
                 // choose a random column from the available valid positions on the current row
                 randomColumn = getValidRandomColumnOnRow(validPositions, rand);
-//                System.out.println("random validPosition for row " + row + ": " + randomColumn);
+//                System.out.println("Random validPosition (column) found for row " + row + ": " + randomColumn);
                 if (randomColumn < 0) {
                     System.out.println("No valid position found on row: " + row);
+                    // this is the breaking point - causes a new cycle to start
                     break;
                 }
 //                System.out.println("Testing field: " + row + " x " + randomColumn);
@@ -90,10 +104,12 @@ public class Board {
                     break;
                 }
             }
+
             if (queenPositionFound) {
                 addQueen(row, randomColumn);
                 validQueensFound++;
             } else {
+                // we have a row without a valid column position, so this board has no solution
                 break;
             }
         }

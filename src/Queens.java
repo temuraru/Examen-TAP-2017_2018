@@ -3,11 +3,15 @@ import java.util.Scanner;
 import static java.lang.Integer.MAX_VALUE;
 
 /**
+ * Probabilistic algorithm example:
+ *      Place N Queens on a N x N chess board, so that they don't threaten each others
  * Run:
- * - "C:\Program Files\Java\jdk1.8.0_151\bin\javac" Queens.java
- * - "C:\Program Files\Java\jdk1.8.0_151\bin\java" Queens
+ *      - "C:\Program Files\Java\jdk1.8.0_151\bin\javac" Queens.java
+ *      - "C:\Program Files\Java\jdk1.8.0_151\bin\java" Queens
  *
- * Results (with displaying failed boards)
+ * Output example:
+ *
+ * Results (with displaying failed boards - takes a LOT longer!!)
  *
  * Board size:			    64 * 64
  * Finished after:			2593 retries
@@ -22,7 +26,7 @@ import static java.lang.Integer.MAX_VALUE;
  *
  * Board size:				128 * 128
  * Finished after:			2609 retries
- * Time Elapsed:			1 seconds
+ * Time Elapsed:			1 seconds+++++++++++++++++++++++++++++++++
 
  * Board size:				28 * 28
  * Finished after:			118 retries

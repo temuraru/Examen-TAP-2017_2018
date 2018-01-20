@@ -1,5 +1,21 @@
 import java.util.Scanner;
 
+/**
+ * Divide et Impera example
+ *      Compute the CMMDC of multiple numbers
+ * It splits the inoput array in half, and applies the same method on each sub-array and compute cmmdc on their results
+ * Run:
+ *      E:\temur\work\java\TAP\src>java Cmmdc
+ * Output example
+ Cmmdc. Please input the number of elements: 3
+ Cmmdc. Please enter the elements:
+ 56
+ 12
+ 48
+ CMMDC = 4
+ Time Elapsed:		0 seconds = 0 miliseconds!
+ The original array:	56 12 48
+ */
 public class Cmmdc {
     public static void main(String[] args) {
         System.out.println();
@@ -18,17 +34,22 @@ public class Cmmdc {
         if (size > 0) {
             long startTime = System.nanoTime();
 
-            System.out.println("CMMDC = " + divide_et_impera(data, 0, size - 1));
+            int cmmdc = divide_et_impera(data, 0, size - 1);
+            System.out.println("=================================== ");
+            System.out.println("CMMDC = " + cmmdc);
+            System.out.println("=================================== ");
 
             long finalTime = System.nanoTime() - startTime;
             int timeElapsed = (int)(finalTime / 1000000000);
             int timeElapsedMili = (int)(finalTime / 1000000);
-            System.out.println("Time Elapsed:\t\t\t" + timeElapsed + " seconds = " + timeElapsedMili + " miliseconds!");
+            System.out.println("Time Elapsed:\t\t" + timeElapsed + " seconds = " + timeElapsedMili + " miliseconds!");
 
             System.out.print("The original array:\t");
             for (int i = 0; i < size; i++) {
-                System.out.print(data[i] + " ");
+                int result = data[i] / cmmdc;
+                System.out.print(data[i] + "/" + cmmdc + "=" + result + "; \t");
             }
+            System.out.println();
         }
     }
 
