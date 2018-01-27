@@ -5,7 +5,7 @@ import java.util.Scanner;
  *      Compute the CMMDC of multiple numbers
  * It splits the inoput array in half, and applies the same method on each sub-array and compute cmmdc on their results
  * Run:
- *      E:\temur\work\java\TAP\src>java Cmmdc
+ *      [..]\src>java Cmmdc
  * Output example
  Cmmdc. Please input the number of elements: 3
  Cmmdc. Please enter the elements:

@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Observation:
  *      For boards of size > 8, the processing time is huge (I stopped it after 20 minutes!)
  * Run:
- *      E:\temur\work\java\TAP\src>java KnightTour
+ *      [..]\src>java KnightTour
  * Output example:
  Enter board size: 8
  Solution:

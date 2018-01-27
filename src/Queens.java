@@ -8,7 +8,7 @@ import static java.lang.Integer.MAX_VALUE;
  * Run:
  *      - "C:\Program Files\Java\jdk1.8.0_151\bin\javac" Queens.java
  *      - "C:\Program Files\Java\jdk1.8.0_151\bin\java" Queens
- *
+ *      - [..]\src>java Queens
  * Output example:
  *
  * Results (with displaying failed boards - takes a LOT longer!!)
